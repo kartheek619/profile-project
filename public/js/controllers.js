@@ -17,6 +17,8 @@ profileControllers.controller('headerController',
 			$scope.phone=response.data.phone;
 			$scope.email=response.data.email;
 			$scope.picture=response.data.picture;
+			$scope.linkedin=response.data.linkedin;
+			$scope.github=response.data.github;
 		});
 
 });

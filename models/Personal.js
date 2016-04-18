@@ -6,6 +6,8 @@ var PersonalSchema = new mongoose.Schema({
 	title: String,
 	phone: String,
 	email: String,
+	linkedin: String,
+	github: String,
 	picture: String
 });
 
