@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<script src="/js/angularApp.js"></script>
+<script src="/js/controllers.js"></script>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body ng-app="profile" ng-controller="headerController">
+<div class="container">
+
+<div class="page-header">
+  	<div class="container">
+  		<div class="row-fluid">
+          <h2>Welcome and Thank you for visiting my page!</h2>
+      	</div>
+  	</div>
+</div>
+
+</div>
+<div class="container">
+<div class="fluid-row">
+<div class="col-md-3">
+  
+      <img src="/images/{{picture}}" class="img-responsive">
+   
+  </div>
+
+</div>
+
+<div class="col-md-5">
+
+<p class="lead"><b>{{fname}} {{lname}}</b><br>{{title}} at Demandware</p>
+
+<ul class="list-unstyled">
+<li><b>Previous:</b> Kroger, ADP, TCS.</li>
+<li><b>Education:</b> Masters in Information Systems</li>
+</ul>
+</div>
+
+<div class="col-md-4">
+<ul class="list-unstyled">
+<br>
+<li><b>Phone:</b> {{phone}}</li>
+<li><b>Email:</b> {{email}}</li>
+<li><b>Linkedin:</b> http://linkedin.com/maremalla</li>
+<li><b>GitHub:</b> http://github.com/kartheek619</li>
+</ul>
+
+</div>
+
+</div>  
+
+<div class="container">
+<hr>
+<div class="panel panel-primary">
+<div class="panel-heading">Contact Information</div>
+<div class="panel-body">You can call me at {{phone}} or e-mail me at {{email}}</div>
+</div>
+</div>
+  
+
+
+
+
+</body>
+</html>
