@@ -20,5 +20,12 @@ profileControllers.controller('headerController',
 			$scope.linkedin=response.data.linkedin;
 			$scope.github=response.data.github;
 		});
+		
+		$http({
+			method:'GET',
+			url:'http://localhost:8000/aboutme/Maremalla'
+		}).then(function(response){
+			$scope.aboutme=response.data.aboutme;
+		});
 
 });

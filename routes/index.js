@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var Personal = mongoose.model('Personal');
+var Aboutme = mongoose.model('Aboutme');
 var path = require('path');  
 
 /* GET home page. */
@@ -55,6 +56,28 @@ router.put('/personal/:lname',function(req,res,next){
 		res.send("Updated Successfully");
 	});
 	
+});
+
+
+/*POST a Personal object*/
+
+router.post('/aboutme', function(req,res,next){
+	var aboutme = new Aboutme(req.body);
+	aboutme.save(function(err,aboutme){
+		if(err){return next(err);}
+		res.json(aboutme);
+	});
+	
+});
+
+
+/*GET a specific personal data based on last name*/
+router.get('/aboutme/:lname', function(req,res,next){
+	var lname = req.params.lname;
+	Aboutme.findOne({"lname":lname}, function(err,aboutme){
+		if(err){return next(err);}
+		res.json(aboutme);
+	});
 });
 
 module.exports = router;
