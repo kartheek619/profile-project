@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 require('./models/Personal');
 require('./models/Aboutme');
 require('./models/Skills');
+require('./models/Employment');
 console.log("here");
 mongoose.connect('mongodb://localhost/profile-db');
 

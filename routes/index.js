@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var Personal = mongoose.model('Personal');
 var Aboutme = mongoose.model('Aboutme');
 var Skills = mongoose.model('Skills');
+var Employment = mongoose.model('Employment');
 var path = require('path');  
 
 /* GET home page. */
@@ -141,6 +142,37 @@ router.put('/skills/:lname',function(req,res,next){
 	Skills.findOneAndUpdate({"lname":lname},updatedData,{upsert:true}, function(err,skills){
 		if(err){return next(err);}
 		res.send("Updated Successfully");
+	});
+	
+});
+
+
+/*POST a Employment object*/
+router.post('/employment', function(req,res,next){
+	var employment = new Employment(req.body);
+	employment.save(function(err,employment){
+		if(err){return next(err);}
+		res.json(employment);
+	});
+	
+});
+
+
+/*GET a specific employment data based on last name*/
+router.get('/employment/:lname', function(req,res,next){
+	var lname = req.params.lname;
+	Employment.findOne({"lname":lname}, function(err,employment){
+		if(err){return next(err);}
+		res.json(employment);
+	});
+});
+
+/*GET all the employments object*/
+router.get('/employment', function(req,res,next){
+	
+	Employment.find(function(err,employment){
+		if(err){return next(err);}
+		res.json(employment);
 	});
 	
 });
