@@ -3,6 +3,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Personal = mongoose.model('Personal');
 var Aboutme = mongoose.model('Aboutme');
+var Skills = mongoose.model('Skills');
 var path = require('path');  
 
 /* GET home page. */
@@ -59,8 +60,17 @@ router.put('/personal/:lname',function(req,res,next){
 });
 
 
-/*POST a Personal object*/
+/*GET all the Aboutme objects*/
+router.get('/aboutme', function(req,res,next){
+	
+	Aboutme.find(function(err,aboutme){
+		if(err){return next(err);}
+		res.json(aboutme);
+	});
+	
+});
 
+/*POST a Aboutme object*/
 router.post('/aboutme', function(req,res,next){
 	var aboutme = new Aboutme(req.body);
 	aboutme.save(function(err,aboutme){
@@ -71,13 +81,68 @@ router.post('/aboutme', function(req,res,next){
 });
 
 
-/*GET a specific personal data based on last name*/
+/*GET a specific Aboutme data based on last name*/
 router.get('/aboutme/:lname', function(req,res,next){
 	var lname = req.params.lname;
 	Aboutme.findOne({"lname":lname}, function(err,aboutme){
 		if(err){return next(err);}
 		res.json(aboutme);
 	});
+});
+
+/*UPDATE a specific aboutme document by lastname*/
+router.put('/aboutme/:lname',function(req,res,next){
+	var lname= req.params.lname;
+	var updatedData = new Aboutme(req.body);
+	Aboutme.findOneAndUpdate({"lname":lname},updatedData,{upsert:true}, function(err,aboutme){
+		if(err){return next(err);}
+		res.send("Updated Successfully");
+	});
+	
+});
+
+
+/*POST a Skills object*/
+router.post('/skills', function(req,res,next){
+	var skills = new Skills(req.body);
+	skills.save(function(err,skills){
+		if(err){return next(err);}
+		res.json(skills);
+	});
+	
+});
+
+
+/*GET a specific Skills data based on last name*/
+router.get('/skills/:lname', function(req,res,next){
+	var lname = req.params.lname;
+	Skills.findOne({"lname":lname}, function(err,skills){
+		if(err){return next(err);}
+		res.json(skills);
+	});
+});
+
+
+/*GET all the skills object*/
+router.get('/skills', function(req,res,next){
+	
+	Skills.find(function(err,skills){
+		if(err){return next(err);}
+		res.json(skills);
+	});
+	
+});
+
+
+/*UPDATE a specific skills document by lastname*/
+router.put('/skills/:lname',function(req,res,next){
+	var lname= req.params.lname;
+	var updatedData = new Skills(req.body);
+	Skills.findOneAndUpdate({"lname":lname},updatedData,{upsert:true}, function(err,skills){
+		if(err){return next(err);}
+		res.send("Updated Successfully");
+	});
+	
 });
 
 module.exports = router;

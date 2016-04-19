@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 require('./models/Personal');
 require('./models/Aboutme');
+require('./models/Skills');
 console.log("here");
 mongoose.connect('mongodb://localhost/profile-db');
 

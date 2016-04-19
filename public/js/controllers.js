@@ -27,5 +27,17 @@ profileControllers.controller('headerController',
 		}).then(function(response){
 			$scope.aboutme=response.data.aboutme;
 		});
+		
+		
+		$http({
+			method:'GET',
+			url:'http://localhost:8000/skills/Maremalla'
+		}).then(function(response){
+			$scope.tech =response.data.tech;
+			$scope.utf =response.data.utf;
+			$scope.cit =response.data.cit;
+			$scope.buildt =response.data.buildt;
+			$scope.others =response.data.others;
+		});
 
 });
