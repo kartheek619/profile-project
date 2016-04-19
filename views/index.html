@@ -22,7 +22,7 @@
 
 </div>
 <div class="container">
-<div class="fluid-row">
+<div class="row-fluid">
 <div class="col-md-3">
   
       <img src="/images/{{picture}}" class="img-responsive">
@@ -124,6 +124,43 @@
 </div>
 </div>
 
+
+<div class="container">
+<div class="panel panel-primary">
+
+<div class="panel-heading">
+ <h3 class="panel-title">Employment History:</h3>
+</div>
+
+<div class="panel-body">
+
+<div class="row-fluid" ng-repeat="employment in employements">
+<div class="col-md-10">
+<h3>{{employment.companyName}}</h3>
+<p>{{employment.fromDate}} - {{employment.toDate}}</p>
+
+<div ng-repeat="project in employment.projects">
+<p><b>{{project.designation}}</b></p>
+<ul>
+<li ng-repeat="desc in project.description">
+{{desc}}
+</li>
+</ul>
+</div>
+<hr>
+</div>
+
+<div class="col-md-2">
+<img src="/images/{{employment.companyCode}}.jpg" class="img-responsive" />
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+</div>
 
 
 

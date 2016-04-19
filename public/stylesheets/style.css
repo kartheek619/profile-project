@@ -3,16 +3,24 @@
 	content:' ';
 }
 
-/* body{ */
-/* 	background-color: black; */
-/* } */
+h3,p{
+	margin:0;
+}
 
-/* table{ */
-/* 	background-color: black; */
-/* } */
+img{
+	vertical-align: middle;
+}
 
-/* div{ */
-/* 	background-color: black; */
-/* 	color:white; */
-/* } */
+body{
+	background-color: black;
+}
+
+table{
+	background-color: black;
+}
+
+div{
+	background-color: black;
+	color:white;
+}
 

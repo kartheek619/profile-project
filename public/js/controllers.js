@@ -39,5 +39,12 @@ profileControllers.controller('headerController',
 			$scope.buildt =response.data.buildt;
 			$scope.others =response.data.others;
 		});
+		
+		$http({
+			method:'GET',
+			url:'http://localhost:8000/employment/Maremalla'
+		}).then(function(response){
+			$scope.employements =response.data.experience;
+		});
 
 });
