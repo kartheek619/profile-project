@@ -9,9 +9,7 @@ var Education = mongoose.model('Education');
 var path = require('path');  
 
 
-router.get('*', function(req, res, next) {
-	res.sendFile(path.resolve('frontpage.html'));
-});
+
 
 
 /* GET home page. */
@@ -213,6 +211,10 @@ router.get('/education', function(req,res,next){
 		res.json(education);
 	});
 	
+});
+
+router.get('*', function(req, res, next) {
+	res.sendFile(path.resolve('frontpage.html'));
 });
 
 
