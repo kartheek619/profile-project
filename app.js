@@ -9,6 +9,7 @@ require('./models/Personal');
 require('./models/Aboutme');
 require('./models/Skills');
 require('./models/Employment');
+require('./models/Education');
 console.log("here");
 mongoose.connect('mongodb://localhost/profile-db');
 

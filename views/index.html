@@ -162,6 +162,29 @@
 </div>
 </div>
 
+<div class="container">
+<div class="panel panel-default">
+<div class="panel-heading">
+ <h3 class="panel-title">Education:</h3>
+</div>
+<div class="panel-body">
+<div class="row-fluid" ng-repeat="edu in education">
+<div class="col-md-10">
+<h3>{{edu.degree}}</h3>
+<p><b>{{edu.university}}-{{edu.college}}</b></p>
+<p><b>GPA:</b> {{edu.gpa}}</p>
+<p><b>Graduated:</b> {{edu.graduatedDate}}</p>
+<p>{{edu.description}}</p>
+<hr>
+</div>
+<div class="col-md-2">
+<img src="/images/{{edu.code}}.jpg" class="img-responsive" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
 
 
 </body>

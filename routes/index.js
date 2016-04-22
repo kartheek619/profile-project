@@ -5,6 +5,7 @@ var Personal = mongoose.model('Personal');
 var Aboutme = mongoose.model('Aboutme');
 var Skills = mongoose.model('Skills');
 var Employment = mongoose.model('Employment');
+var Education = mongoose.model('Education');
 var path = require('path');  
 
 /* GET home page. */
@@ -173,6 +174,37 @@ router.get('/employment', function(req,res,next){
 	Employment.find(function(err,employment){
 		if(err){return next(err);}
 		res.json(employment);
+	});
+	
+});
+
+
+/*POST a Employment object*/
+router.post('/education', function(req,res,next){
+	var education = new Education(req.body);
+	education.save(function(err,education){
+		if(err){return next(err);}
+		res.json(education);
+	});
+	
+});
+
+
+/*GET a specific employment data based on last name*/
+router.get('/education/:lname', function(req,res,next){
+	var lname = req.params.lname;
+	Education.findOne({"lname":lname}, function(err,education){
+		if(err){return next(err);}
+		res.json(education);
+	});
+});
+
+/*GET all the employments object*/
+router.get('/education', function(req,res,next){
+	
+	Education.find(function(err,education){
+		if(err){return next(err);}
+		res.json(education);
 	});
 	
 });
