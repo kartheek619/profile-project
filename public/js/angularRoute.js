@@ -2,13 +2,17 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 
     $routeProvider
     	.when('/', {
-            templateUrl: 'views/index.html',
-            controller: 'mainController'
-        })
-        .when('/app', {
             templateUrl: 'views/main.html',
-            controller: 'mainController'
-        });
+            controller: 'headerController'
+        })
+        .when('/appy', {
+            templateUrl: 'views/appy.html',
+            controller: 'headerController'
+        })
+        .otherwise({
+        redirectTo: '/'
+      });
+        ;
 
     $locationProvider.html5Mode(true);
 
