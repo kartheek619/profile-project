@@ -8,6 +8,12 @@ var Employment = mongoose.model('Employment');
 var Education = mongoose.model('Education');
 var path = require('path');  
 
+
+router.get('*', function(req, res, next) {
+	res.sendFile(path.resolve('frontpage.html'));
+});
+
+
 /* GET home page. */
 router.get('/home', function(req, res, next) {
 	res.sendFile(path.resolve('views/index.html'));
@@ -209,8 +215,5 @@ router.get('/education', function(req,res,next){
 	
 });
 
-router.get('*', function(req, res, next) {
-	res.sendFile(path.resolve('index.html'));
-});
 
 module.exports = router;
