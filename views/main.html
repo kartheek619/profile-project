@@ -1,0 +1,176 @@
+<div>
+<div class="container">
+
+<div class="page-header">
+  	<div class="container">
+  		<div class="row-fluid">
+          <h2>Welcome and Thank you for visiting my page!</h2>
+      	</div>
+  	</div>
+</div>
+
+</div>
+<div class="container">
+<div class="row-fluid">
+<div class="col-md-3">
+  
+      <img src="/images/{{picture}}" class="img-responsive">
+   
+  </div>
+
+</div>
+
+<div class="col-md-5">
+
+<p class="lead"><b>{{fname}} {{lname}}</b><br>{{title}}</p>
+
+<ul class="list-unstyled">
+<li><b>Previous:</b> Kroger, ADP, TCS.</li>
+<li><b>Education:</b> Masters in Information Systems</li>
+</ul>
+</div>
+
+<div class="col-md-4">
+<ul class="list-unstyled">
+<br>
+<li><b>Phone:</b> {{phone}}</li>
+<li><b>Email:</b> {{email}}</li>
+<li><b>Linkedin:</b> {{linkedin}}</li>
+<li><b>GitHub:</b> {{github}}</li>
+</ul>
+
+</div>
+
+</div>  
+
+<div class="container">
+<hr>
+<div class="panel panel-primary">
+<div class="panel-heading">
+ <h3 class="panel-title">About me:</h3>
+</div>
+<div class="panel-body"><p>{{aboutme}}<p></div>
+</div>
+</div>
+  
+<div class="container">
+
+<div class="panel panel-default">
+
+<div class="panel-heading">
+    <h3 class="panel-title">Technical Skills:</h3>
+</div>
+
+<div class="panel-body">
+<table class="table">
+
+<tbody>
+<tr>
+<td class="col-md-2"><b>Technologies</b></td>
+<td class="col-md-10">
+<span ng-repeat="data in tech" ng-class="{space:!$last}">
+<span class="label label-primary">{{data}}</span>
+</span>
+</td>
+</tr>
+
+<tr>
+<td class="col-md-2"><b>Unit Testing Frameworks:</b></td>
+<td class="col-md-10">
+<span ng-repeat="data in utf" ng-class="{space:!$last}">
+<span class="label label-default">{{data}}</span>
+</span>
+</td>
+</tr>
+
+<tr>
+<td class="col-md-2"><b>Build Tools:</b></td>
+<td class="col-md-10">
+<span ng-repeat="data in buildt" ng-class="{space:!$last}">
+<span class="label label-warning">{{data}}</span>
+</td>
+</tr>
+
+<tr>
+<td class="col-md-2"><b>Continuous Integration Tools:</b></td>
+<td class="col-md-10">
+<span ng-repeat="data in cit" ng-class="{space:!$last}">
+<span class="label label-success">{{data}}</span>
+</td>
+</tr>
+
+<tr>
+<td class="col-md-2"><b>Other Tools:</b></td>
+<td class="col-md-10">
+<span ng-repeat="data in others" ng-class="{space:!$last}">
+<span class="label label-info">{{data}}</span>
+</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+<div class="container">
+<div class="panel panel-primary">
+
+<div class="panel-heading">
+ <h3 class="panel-title">Employment History:</h3>
+</div>
+
+<div class="panel-body">
+
+<div class="row-fluid" ng-repeat="employment in employements">
+<div class="col-md-10">
+<h3>{{employment.companyName}}</h3>
+<p>{{employment.fromDate}} - {{employment.toDate}}</p>
+
+<div ng-repeat="project in employment.projects">
+<p><b>{{project.designation}}</b></p>
+<ul>
+<li ng-repeat="desc in project.description">
+{{desc}}
+</li>
+</ul>
+</div>
+<hr>
+</div>
+
+<div class="col-md-2">
+<img src="/images/{{employment.companyCode}}.jpg" class="img-responsive" />
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+</div>
+
+<div class="container">
+<div class="panel panel-default">
+<div class="panel-heading">
+ <h3 class="panel-title">Education:</h3>
+</div>
+<div class="panel-body">
+<div class="row-fluid" ng-repeat="edu in education">
+<div class="col-md-10">
+<h3>{{edu.degree}}</h3>
+<p><b>{{edu.university}}-{{edu.college}}</b></p>
+<p><b>GPA:</b> {{edu.gpa}}</p>
+<p><b>Graduated:</b> {{edu.graduatedDate}}</p>
+<p>{{edu.description}}</p>
+<hr>
+</div>
+<div class="col-md-2">
+<img src="/images/{{edu.code}}.jpg" class="img-responsive" />
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
