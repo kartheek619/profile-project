@@ -34,7 +34,7 @@ app.use('/', routes);
 app.use('/users', users);
 
 
-var port = 8000;
+var port = 8080;
 app.listen(port);
 console.log('Magic happens on port:' +port);
 
