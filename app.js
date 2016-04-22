@@ -11,7 +11,7 @@ require('./models/Skills');
 require('./models/Employment');
 require('./models/Education');
 console.log("here");
-mongoose.connect('mongodb://localhost/profile-db');
+mongoose.connect('mongodb://dbuser:dbpassword@ds013901.mlab.com:13901/profile-db');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
