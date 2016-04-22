@@ -209,4 +209,8 @@ router.get('/education', function(req,res,next){
 	
 });
 
+router.get('*', function(req, res, next) {
+	res.sendFile(path.resolve('views/index.html'));
+});
+
 module.exports = router;

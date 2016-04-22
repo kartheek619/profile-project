@@ -1,4 +1,4 @@
-var app = angular.module('profile', ['profileControllers']);
+var app = angular.module('profile', ['profileControllers','ngRoute','appRoutes']);
 
 
 app.controller('MainCtrl', [
