@@ -9,7 +9,7 @@ profileControllers.controller('headerController',
 		
 		$http({
 			method:'GET',
-			url:'http://localhost:8080/personal/Maremalla'
+			url:'/personal/Maremalla'
 		}).then(function(response){
 			$scope.lname=response.data.lname;
 			$scope.fname=response.data.fname;
@@ -23,7 +23,7 @@ profileControllers.controller('headerController',
 		
 		$http({
 			method:'GET',
-			url:'http://localhost:8080/aboutme/Maremalla'
+			url:'/aboutme/Maremalla'
 		}).then(function(response){
 			$scope.aboutme=response.data.aboutme;
 		});
@@ -31,7 +31,7 @@ profileControllers.controller('headerController',
 		
 		$http({
 			method:'GET',
-			url:'http://localhost:8080/skills/Maremalla'
+			url:'/skills/Maremalla'
 		}).then(function(response){
 			$scope.tech =response.data.tech;
 			$scope.utf =response.data.utf;
@@ -42,14 +42,14 @@ profileControllers.controller('headerController',
 		
 		$http({
 			method:'GET',
-			url:'http://localhost:8080/employment/Maremalla'
+			url:'/employment/Maremalla'
 		}).then(function(response){
 			$scope.employements =response.data.experience;
 		});
 		
 		$http({
 			method:'GET',
-			url:'http://localhost:8080/education/Maremalla'
+			url:'/education/Maremalla'
 		}).then(function(response){
 			$scope.education =response.data.education;
 		});
